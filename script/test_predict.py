@@ -1,15 +1,28 @@
-import os
-import joblib
 import pandas as pd
+from joblib import load
 
-model = None
-classes = None
+model = load('svm_optimized_model.joblib')
 
-if os.path.exists('models/svm_optimized_model.joblib'):
-    model = joblib.load('models/svm_optimized_model.joblib')
+dados = pd.DataFrame({
+    'hair': [0],
+    'feathers': [0],
+    'eggs': [1],
+    'milk': [0],
+    'airborne': [0],
+    'aquatic': [1],
+    'predator': [1],
+    'toothed': [1],
+    'backbone': [1],
+    'breathes': [1],
+    'venomous': [1],
+    'fins': [0],
+    'legs': [8],
+    'tail': [0],
+    'domestic': [0],
+    'catsize': [0]
+})
 
-if os.path.exists('models/datasets/class.csv'):
-    classes = pd.read_csv('models/datasets/class.csv')
+classes = pd.read_csv('datasets/class.csv')
 
 def mapear_numero_para_classe(numero_classe, class_data):
     """
@@ -25,10 +38,6 @@ def mapear_numero_para_classe(numero_classe, class_data):
     else:
         return "Classe não encontrada"
 
-def predict(data):
-    if model is not None:
-        prediction = model.predict(data)
-        result = mapear_numero_para_classe(prediction[0], classes)
-        return result
-    else:
-        return "Modelo não disponível"
+classe_predict = model.predict(dados)[0]
+
+print(mapear_numero_para_classe(classe_predict, classes))

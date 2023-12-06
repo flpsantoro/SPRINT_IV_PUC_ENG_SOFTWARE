@@ -67,11 +67,6 @@ for name, model in optimized_models.items():
 df_cv_scores = pd.DataFrame(cv_scores).T
 print(df_cv_scores)
 
-# Exportando o melhor modelo baseado na média da acurácia de CV
-best_model_name = max(cv_scores, key=lambda name: cv_scores[name]['CV Accuracy Mean'])
-best_model = optimized_models[best_model_name]
-model_filename = f'{best_model_name.lower()}_optimized_model.joblib'
-dump(best_model, model_filename)
 
 # Visualização dos resultados
 plt.figure(figsize=(12, 8))
@@ -81,3 +76,9 @@ plt.ylabel('Acurácia Média')
 plt.xlabel('Modelos')
 plt.xticks(rotation=45)
 plt.show()
+
+# Exportando o melhor modelo baseado na média da acurácia de CV
+best_model_name = max(cv_scores, key=lambda name: cv_scores[name]['CV Accuracy Mean'])
+best_model = optimized_models[best_model_name]
+model_filename = f'{best_model_name.lower()}_optimized_model.joblib'
+dump(best_model, model_filename)

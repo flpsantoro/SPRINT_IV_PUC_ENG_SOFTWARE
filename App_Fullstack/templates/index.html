@@ -1,18 +1,137 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Carregar Modelo</title>
+    <title>Animal Predictor</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h2>Carregar Modelo de Machine Learning</h2>
-    <form id="uploadForm" enctype="multipart/form-data">
-        <input type="file" id="modelFile" name="modelFile"><br>
-
-        <button type="submit">Carregar Modelo</button>
+<div class="container mt-4">
+    <h2>Animal Predictor</h2>
+    <form id="predictForm">
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="hair" name="hair">
+                    <label class="form-check-label" for="hair">Tem Pelos?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="feathers" name="feathers">
+                    <label class="form-check-label" for="feathers">Tem Penas?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="eggs" name="eggs">
+                    <label class="form-check-label" for="eggs">Bota ovo?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="milk" name="milk">
+                    <label class="form-check-label" for="milk">Produz leite?</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="airborne" name="airborne">
+                    <label class="form-check-label" for="airborne">Voador?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="aquatic" name="aquatic">
+                    <label class="form-check-label" for="aquatic">Aquático?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="predator" name="predator">
+                    <label class="form-check-label" for="predator">É um predador?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="toothed" name="toothed">
+                    <label class="form-check-label" for="toothed">Tem dentes?</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="backbone" name="backbone">
+                    <label class="form-check-label" for="backbone">Tem coluna vertebral?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="breathes" name="breathes">
+                    <label class="form-check-label" for="breathes">Respira?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="venomous" name="venomous">
+                    <label class="form-check-label" for="venomous">É venenoso?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fins" name="fins">
+                    <label class="form-check-label" for="fins">Tem barbatanas?</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group d-flex align-items-center">
+                    <input class="form-control form-control-sm me-2" type="number" id="legs" name="legs" min="1" max="8"
+                           style="width: 50px; height: 30px;">
+                    <label for="legs" class="mb-0">Quantas pernas?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="tail" name="tail">
+                    <label class="form-check-label" for="tail">Tem rabo?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="domestic" name="domestic">
+                    <label class="form-check-label" for="domestic">É um animal doméstico?</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="catsize" name="catsize">
+                    <label class="form-check-label" for="catsize">Pequeno porte?</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Predict</button>
+                </div>
+            </div>
+        </div>
     </form>
-    <div id="uploadResult"></div>
+</div>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<div class="container mt-4">
+    <h2>Resultado</h2>
+    <div id="result"></div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<!-- Bootstrap JS and Popper.js (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -19,6 +19,8 @@ class_data = pd.read_csv('datasets/class.csv')
 zoo_data = pd.read_csv('datasets/zoo.csv')
 
 # Preparando os dados
+
+
 zoo_data_clean = zoo_data.drop('animal_name', axis=1)
 X = zoo_data_clean.drop('class_type', axis=1)
 y = zoo_data_clean['class_type']

@@ -1,4 +1,4 @@
-# Projeto de Pós-Graduação em Engenharia de Software - PUC Rio
+# Pós-Graduação em Engenharia de Software - PUC Rio
 
 ## Sobre o Projeto
 Este projeto é parte de um MVP (Produto Mínimo Viável) desenvolvido para o curso de pós-graduação em Engenharia de Software da PUC Rio. Ele inclui o desenvolvimento e a implementação de um modelo de machine learning para classificação, bem como a criação de uma aplicação full stack integrando o modelo.

@@ -5,7 +5,7 @@ Este projeto é parte de um MVP (Produto Mínimo Viável) desenvolvido para o cu
 
 ## Estrutura do Repositório
 - `App_Fullstack`: Contém os códigos fonte da aplicação full stack desenvolvida.
-- `Notebook`: Inclui o notebook Jupyter (Google Colab) utilizado para o desenvolvimento do modelo de machine learning.
+- `Notebook`: Inclui o notebook no Google Colab utilizado para o desenvolvimento do modelo de machine learning.
 
 ## Modelo de Machine Learning
 O modelo de machine learning foi desenvolvido seguindo as etapas de carga de dados, separação entre treino e teste, transformação de dados, modelagem, otimização de hiperparâmetros, avaliação e comparação de resultados. Algoritmos como KNN, Árvore de Classificação, Naive Bayes e SVM foram utilizados.

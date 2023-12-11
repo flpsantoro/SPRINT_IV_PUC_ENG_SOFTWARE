@@ -24,4 +24,4 @@ Para executar o notebook de machine learning:
 - Acesse a pasta `Notebook` e abra o arquivo Jupyter no Google Colab.
 
 Para rodar a aplicação full stack:
-- Navegue até a pasta `App_Fullstack` e execute a aplicação app.py em flask
+- Navegue até a pasta `App_Fullstack` e execute a aplicação `app.py` em flask
